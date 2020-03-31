@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SearchResultComponent implements OnInit {
 
   public recipes: {id: number, title: string , publisher: string, url: string, img: string, ingredients: []}[];
+  public selectedRecipeId: number;
 
   constructor() { }
 
@@ -55,6 +56,10 @@ export class SearchResultComponent implements OnInit {
         ingredients: []
       },
   ]
+  }
+
+  selectRecipe(id:number): void {
+    this.selectedRecipeId = id;
   }
 
 }
