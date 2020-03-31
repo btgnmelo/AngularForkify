@@ -14,7 +14,7 @@ export class AppComponent {
   @HostListener('window:hashchange', ['$event'])
   hasChange() {
     const id = parseInt(window.location.hash.replace('#', ''));
-    this.recipeServices.onHashChanged.emit(id);
+    this.recipeServices.onRecipeSelected.emit(id);
 
   }
 }

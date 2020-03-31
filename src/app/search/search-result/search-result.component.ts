@@ -13,7 +13,7 @@ export class SearchResultComponent implements OnInit {
   public selectedRecipeId: number;
 
   constructor(private recipeServices: RecipeServices) {
-    recipeServices.onHashChanged.subscribe((id: number)=> {
+    recipeServices.onRecipeSelected.subscribe((id: number)=> {
       this.selectedRecipeId = id;
     });
    }
@@ -21,9 +21,5 @@ export class SearchResultComponent implements OnInit {
   ngOnInit(): void {
       this.recipes = this.recipeServices.getRecipes();
   }
-
- /*  selectRecipe(id:number): void {
-    this.selectedRecipeId = id;
-  } */
 
 }

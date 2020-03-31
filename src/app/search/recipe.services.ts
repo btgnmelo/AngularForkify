@@ -47,7 +47,7 @@ export class RecipeServices  {
 
     constructor(){} 
 
-    public onHashChanged = new EventEmitter<number>();
+    public onRecipeSelected = new EventEmitter<number>();
 
     getRecipes() {
         return this.recipes.slice();
