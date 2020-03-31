@@ -1,7 +1,7 @@
 <div class="results">
     <ul class="results__list" >
         <li *ngFor ='let recipe of recipes'>
-            <a class="results__link" [ngClass]="{'results__link--active' : selectedRecipeId === recipe.id}"  (click)="selectRecipe(recipe.id)" href="#{{recipe.id}}">
+            <a class="results__link" [ngClass]="{'results__link--active' : selectedRecipeId === recipe.id}"  href="#{{recipe.id}}">
                 <figure class="results__fig">
                     <img src="{{recipe.img}}" alt="Test">
                 </figure>
