@@ -1,8 +1,9 @@
+import { Recipe } from './recipe.model';
+
 export class LikeServices {
-    public likes;
+    public likes: Recipe[] = [];
 
     constructor() {
-        this.likes = [];
     }
 
     getFromStorage() {
@@ -10,7 +11,7 @@ export class LikeServices {
         if (storage) this.likes = JSON.parse(storage);
     }
 
-    addLike(like): void {
+    addLike(like: Recipe): void {
         this.likes.push(like);
         this.setToStorage();
     }
