@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { RecipeServices } from '../recipe.services';
 
 @Component({
-  selector: 'app-search-result',
-  templateUrl: './search-result.component.html',
-  styleUrls: ['./search-result.component.css']
+  selector: 'app-recipe-list',
+  templateUrl: './recipe-list.component.html',
+  styleUrls: ['./recipe-list.component.css']
   
 })
 export class SearchResultComponent implements OnInit {

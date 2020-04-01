@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, HostListener } from '@angular/core';
-import { RecipeServices } from './search/recipe.services';
+import { RecipeServices } from './recipe/recipe.services';
 
 @Component({
   selector: 'app-root',
