@@ -22,4 +22,6 @@ export class SearchResultComponent implements OnInit {
       this.recipes = this.recipeServices.getRecipes();
   }
 
+
+
 }
