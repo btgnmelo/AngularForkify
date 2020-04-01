@@ -1,11 +1,12 @@
 import { Component, ViewEncapsulation, HostListener } from '@angular/core';
 import { RecipeServices } from './recipe/recipe.services';
+import { LikeServices } from './recipe/likes.services';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [RecipeServices]
+  providers: [RecipeServices, LikeServices]
   
 })
 export class AppComponent {

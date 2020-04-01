@@ -2,8 +2,13 @@ import { OnInit, Injectable, EventEmitter } from '@angular/core';
 import { Recipe } from './recipe.model';
 
 @Injectable()
-export class RecipeServices  {
-    private recipes: Recipe[] = [
+export class RecipeServices {
+
+    private recipes: Recipe[] = []
+    public onRecipeSelected = new EventEmitter<number>();
+
+    constructor(){
+      this.recipes = [
         {
           id:23456,
           title:'Pasta with Tomato ...',
@@ -34,11 +39,9 @@ export class RecipeServices  {
           publisher:'Chow',
           img: '../assets/img/test-5.jpg',
         },
-    ]
+      ]
+    } 
 
-    constructor(){} 
-
-    public onRecipeSelected = new EventEmitter<number>();
 
     getRecipes() {
         return this.recipes.slice();

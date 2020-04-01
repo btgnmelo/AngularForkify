@@ -1,9 +1,35 @@
 import { Recipe } from './recipe.model';
 
 export class LikeServices {
-    public likes: Recipe[] = [];
+
+    private likes: Recipe[] = [];
 
     constructor() {
+        this.likes = [ {
+            id:85354,
+            title:'Homemade Tomato Pasta...',
+            publisher:'All Recipes',
+            img: '../assets/img/test-3.jpg',
+          },
+          {
+            id:43563,
+            title:'Pasta with Tomato ...',
+            publisher:'The Pioneer Woman',
+            img: '../assets/img/test-4.jpg',
+          },
+          {
+            id:2256665,
+            title:'Greek Pasta with ...',
+            publisher:'Chow',
+            img: '../assets/img/test-5.jpg',
+          },];
+
+          this.setToStorage();
+    }
+
+    getLikes() {
+        this.getFromStorage();
+        return this.likes.slice();
     }
 
     getFromStorage() {

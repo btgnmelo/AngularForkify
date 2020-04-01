@@ -1,15 +1,13 @@
-<div class="results">
-    <ul class="results__list">
-        <li *ngFor ='let recipe of recipes'>
-            <a class="results__link" [ngClass]="{'results__link--active' : selectedRecipeId === recipe.id}"   href="#{{recipe.id}}">
-                <figure class="results__fig">
-                    <img src="{{recipe.img}}" alt="Test">
-                </figure>
-                <div class="results__data">
-                    <h4 class="results__name">{{recipe.title}}</h4>
-                    <p class="results__author">{{recipe.publisher}}</p>
-                </div>
-            </a>
-        </li>
-    </ul>
-</div>
+<ul class="results__list">
+    <li *ngFor ='let recipe of recipes'>
+        <a class="results__link" [ngClass]="{'results__link--active' : selectedRecipeId === recipe.id}"   href="#{{recipe.id}}">
+            <figure class="results__fig">
+                <img src="{{recipe.img}}" alt="Test">
+            </figure>
+            <div class="results__data">
+                <h4 class="results__name">{{recipe.title}}</h4>
+                <p class="results__author">{{recipe.publisher}}</p>
+            </div>
+        </a>
+    </li>
+</ul>
