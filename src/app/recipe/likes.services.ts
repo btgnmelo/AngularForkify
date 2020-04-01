@@ -6,22 +6,22 @@ export class LikeServices {
 
     constructor() {
         this.likes = [ {
-            id:85354,
+            recipe_id:85354,
             title:'Homemade Tomato Pasta...',
             publisher:'All Recipes',
-            img: '../assets/img/test-3.jpg',
+            image_url: '../assets/img/test-3.jpg',
           },
           {
-            id:43563,
+            recipe_id:43563,
             title:'Pasta with Tomato ...',
             publisher:'The Pioneer Woman',
-            img: '../assets/img/test-4.jpg',
+            image_url: '../assets/img/test-4.jpg',
           },
           {
-            id:2256665,
+            recipe_id:2256665,
             title:'Greek Pasta with ...',
             publisher:'Chow',
-            img: '../assets/img/test-5.jpg',
+            image_url: '../assets/img/test-5.jpg',
           },];
 
           this.setToStorage();
@@ -44,13 +44,13 @@ export class LikeServices {
 
 
     deleteLike(id: number) {
-        const index = this.likes.findIndex(el => el.id === id);
+        const index = this.likes.findIndex(el => el.recipe_id === id);
         this.likes.splice(index, 1);
         this.setToStorage();
     }
 
     isLiked(id: number) {
-        return this.likes.findIndex(el => el.id === id) !== -1;
+        return this.likes.findIndex(el => el.recipe_id === id) !== -1;
     }
 
     getNumLikes() {
