@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { RecipeServices } from '../recipe.services';
 
 @Component({
   selector: 'app-recipe-list',
@@ -9,14 +8,13 @@ import { RecipeServices } from '../recipe.services';
 })
 export class RecipeListComponent implements OnInit {
 
-  @Input() public recipes = [];
-  @Input() public selectedRecipeId: number;
+  @Input() public recipes;
+  @Input() public selectedRecipeId: string;
 
   constructor() {
    }
 
   ngOnInit(): void {
-    console.log(this.recipes);
   }
 
 

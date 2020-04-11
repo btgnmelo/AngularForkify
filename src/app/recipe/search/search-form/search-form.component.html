@@ -1,0 +1,10 @@
+
+<form class="search">
+    <input type="text" class="search__field" [(ngModel)]="searchKey" name="searchKey" placeholder="Search over 1,000,000 recipes...">
+    <button class="btn search__btn" (click)="onSearch()">
+        <svg class="search__icon">
+            <use href="../assets/img/icons.svg#icon-magnifying-glass"></use>
+        </svg>
+        <span>Search</span>
+    </button>
+</form>

@@ -1,60 +1,43 @@
-import { Recipe } from './recipe.model';
+import { RecipeSearch } from './recipe.model';
+import { Output, EventEmitter } from '@angular/core';
 
 export class LikeServices {
 
-    private likes: Recipe[] = [];
+    public OnLikeUpdated = new EventEmitter();
 
-    constructor() {
-        this.likes = [ {
-            recipe_id:85354,
-            title:'Homemade Tomato Pasta...',
-            publisher:'All Recipes',
-            image_url: '../assets/img/test-3.jpg',
-          },
-          {
-            recipe_id:43563,
-            title:'Pasta with Tomato ...',
-            publisher:'The Pioneer Woman',
-            image_url: '../assets/img/test-4.jpg',
-          },
-          {
-            recipe_id:2256665,
-            title:'Greek Pasta with ...',
-            publisher:'Chow',
-            image_url: '../assets/img/test-5.jpg',
-          },];
+    private likes: RecipeSearch[] = [];
 
-          this.setToStorage();
-    }
+    constructor() {}
 
-    getLikes() {
+    public getLikes() {
         this.getFromStorage();
         return this.likes.slice();
     }
 
-    getFromStorage() {
-        const storage = window.localStorage.getItem('likes');
-        if (storage) this.likes = JSON.parse(storage);
-    }
-
-    addLike(like: Recipe): void {
+    public addLike(like: RecipeSearch): void {
         this.likes.push(like);
         this.setToStorage();
+        this.OnLikeUpdated.emit();
     }
 
-
-    deleteLike(id: number) {
+    public deleteLike(id: string) {
         const index = this.likes.findIndex(el => el.recipe_id === id);
         this.likes.splice(index, 1);
         this.setToStorage();
+        this.OnLikeUpdated.emit();
     }
 
-    isLiked(id: number) {
+    public isLiked(id: string) {
         return this.likes.findIndex(el => el.recipe_id === id) !== -1;
     }
 
-    getNumLikes() {
+    public getNumLikes() {
         return this.likes.length;
+    }
+
+    private getFromStorage() {
+        const storage = window.localStorage.getItem('likes');
+        if (storage) this.likes = JSON.parse(storage);
     }
 
     private setToStorage(): void {

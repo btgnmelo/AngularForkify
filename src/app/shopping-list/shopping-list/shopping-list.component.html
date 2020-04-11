@@ -1,0 +1,15 @@
+<h2 class="heading-2">My Shopping List</h2>
+<ul class="shopping__list">
+    <li class="shopping__item" *ngFor="let shoppingItem of shoppingList">
+        <div class="shopping__count">
+            <input type="number" [(ngModel)]="shoppingItem.Ingredient.count" step="{{ shoppingItem.Ingredient.count }}">
+            <p> {{ shoppingItem.Ingredient.unit }} </p>
+        </div>
+        <p class="shopping__description">{{ shoppingItem.Ingredient.ingredient }}</p>
+        <button class="shopping__delete btn-tiny" (click)="onRemoveItem(shoppingItem.id)">
+            <svg>
+                <use href="../assets/img/icons.svg#icon-circle-with-cross"></use>
+            </svg>
+        </button>
+    </li>
+</ul>

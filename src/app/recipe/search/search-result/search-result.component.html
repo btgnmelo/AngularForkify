@@ -1,17 +1,27 @@
-<div class="results">
-    <app-recipe-list [recipes]="searchResults" [selectedRecipeId]="selectedResultId"></app-recipe-list>
+<div>
+    <app-recipe-list 
+        [recipes]="renderResultPerPage()" 
+        [selectedRecipeId]="selectedRecipeId">
+    </app-recipe-list>
     <div class="results__pages">
-        <button class="btn-inline results__btn--prev" [ngStyle] ="{'display': currentPage > 1? 'block':'none'}" (click)="gotoPage('prev')">
+        <button 
+            class="btn-inline results__btn--prev" 
+            (click)="gotoPage('prev')"
+            [ngStyle] ="{'display': currentPage > 1? 'block':'none'}">
             <svg class="search__icon">
                 <use href="../assets/img/icons.svg#icon-triangle-left"></use>
             </svg>
-            <span>Page {{currentPage - 1}}</span>
+            <span>Page {{ currentPage - 1 }}</span>
         </button>
-        <button class="btn-inline results__btn--next" [ngStyle] ="{'display': currentPage < maxPage? 'block':'none'}" (click)="gotoPage('next')">
+        <button 
+            class="btn-inline results__btn--next" 
+            (click)="gotoPage('next')"
+            [ngStyle] ="{'display': currentPage < maxPage? 'block':'none'}">
             <svg class="search__icon">
                 <use href="../assets/img/icons.svg#icon-triangle-right"></use>
             </svg>
-            <span>Page {{currentPage + 1}}</span>
+            <span>Page {{ currentPage + 1 }}</span>
         </button>
     </div>
 </div>
+

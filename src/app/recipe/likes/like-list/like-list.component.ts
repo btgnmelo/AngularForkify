@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LikeServices } from '../../likes.services';
+import { RecipeSearch } from '../../recipe.model'
 
 @Component({
   selector: 'app-like-list',
@@ -8,12 +9,12 @@ import { LikeServices } from '../../likes.services';
 })
 export class LikeListComponent implements OnInit {
 
-  public likes = [];
+  @Input() likes: RecipeSearch[];
 
-  constructor(private likesServices: LikeServices) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.likes = this.likesServices.getLikes();
+    
   }
 
 
